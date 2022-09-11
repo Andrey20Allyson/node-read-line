@@ -1,13 +1,11 @@
-import process from 'process';
 import { Scanner } from './scanner';
 
-async function main(argv: string[]): Promise<number> {
-    let x = await Scanner.nextInt('valor x: ');
-    let y = await Scanner.nextInt('valor y: ');
+async function main() {
+    let resp: string = await Scanner.next('Olá, tudo bem? ');
 
-    console.log(x + y);
-    return 0;
-};
+    if (resp.toLowerCase() == 'sim') {
+        console.log('Ótimo!');
+    }
+}
 
-main(process.argv)
-.then(process.exit);
+main();

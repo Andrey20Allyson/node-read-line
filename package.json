@@ -4,6 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
+    "dev": "node dist\\index.js",
+    "build-dev": "tsc && npm run dev",
     "test": "vitest"
   },
   "keywords": [],
@@ -13,6 +16,7 @@
     "@types/node": "^18.7.16"
   },
   "dependencies": {
+    "typescript": "^4.8.3",
     "vitest": "^0.23.2"
   }
 }

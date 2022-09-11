@@ -1,11 +1,13 @@
 import process, { stdin, stdout } from "process";
 
+const exp = /\n|\r\n/g;
+
 export function input(msg: string): Promise<string> {
     return new Promise((resolve, reject) => {
         stdin.resume();
         stdout.write(msg);
         stdin.once('data', data => {
-            resolve(data.toString('utf-8'));
+            resolve(data.toString('utf-8').replaceAll(exp, ''));
             stdin.pause();
         });
     });
